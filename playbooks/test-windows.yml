@@ -1,0 +1,19 @@
+---
+- name: Test d'administration Windows Server
+  hosts: windows
+  gather_facts: true
+
+  tasks:
+    - name: Afficher le nom d'hote et le domaine detectes
+      ansible.builtin.debug:
+        msg: "Serveur: {{ ansible_hostname }} | Domaine: {{ ansible_domain }}"
+
+    - name: "Creer un repertoire de test sur le disque C"
+      ansible.windows.win_file:
+        path: 'C:\Lab_Ansible'
+        state: directory
+
+    - name: "Generer un fichier journal d'audit"
+      ansible.windows.win_copy:
+        content: "Serveur configure par Ansible depuis OPS01 le {{ ansible_date_time.date }} a {{ ansible_date_time.time }}\r\n"
+        dest: 'C:\Lab_Ansible\audit.txt'

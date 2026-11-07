@@ -1,0 +1,14 @@
+---
+- name: Gestion des utilisateurs Active Directory
+  hosts: windows
+  gather_facts: false
+
+  tasks:
+    - name: Creer un utilisateur standard de test
+      microsoft.ad.user:
+        name: testuser
+        upn: testuser@infraready.test
+        password: "UserPassword2026!"
+        state: present
+        enabled: true
+        password_never_expires: true
