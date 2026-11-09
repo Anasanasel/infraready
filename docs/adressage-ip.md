@@ -12,9 +12,9 @@ L'infrastructure de laboratoire repose sur un réseau privé isolé garantissant
 
 | Machine | Interface | Rôle / Type | Adresse IP / Préfixe | Passerelle | DNS Primaire | Justification |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **WIN-DC01** | Ethernet0 | Réseau Privé | 192.168.50.10/24 | Aucune | 127.0.0.1 | Contrôleur AD DS & DNS |
-| **OPS01** | enp0s3 | Réseau Privé | 192.168.50.30/24 | Aucune | 192.168.50.10 | Ansible & supervision |
-| **SRV-LINUX** | Debian / Ubuntu Linux | enp0s3 | **192.168.50.20/24** | - | Serveur applicatif, Volume monté (/mnt/stockage-lab) |
+| **WIN-DC01** | Ethernet0 | Réseau Privé | 192.168.50.10/24 | Aucune | 127.0.0.1 | Contrôleur AD DS & Serveur DNS |
+| **SRV-LINUX** | enp0s3 | Réseau Privé | 192.168.50.20/24 | Aucune | 192.168.50.10 | Serveur applicatif & Stockage lab (/mnt/stockage-lab) |
+| **OPS01** | enp0s3 | Réseau Privé | 192.168.50.30/24 | Aucune | 192.168.50.10 | Station d'administration Ansible & Supervision (Prometheus / Grafana) |
 
 
 ## 3. Configuration Réseau Netplan (OPS01)
