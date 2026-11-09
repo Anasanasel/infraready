@@ -14,7 +14,8 @@ L'infrastructure de laboratoire repose sur un réseau privé isolé garantissant
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **WIN-DC01** | Ethernet0 | Réseau Privé | 192.168.50.10/24 | Aucune | 127.0.0.1 | Contrôleur AD DS & DNS |
 | **OPS01** | enp0s3 | Réseau Privé | 192.168.50.30/24 | Aucune | 192.168.50.10 | Ansible & supervision |
-| **OPS01** | enp0s8 | NAT Externe | DHCP | Passerelle NAT (metric 100) | 192.168.50.10 | Accès Internet / GitHub |
+| **SRV-LINUX** | Debian / Ubuntu Linux | enp0s3 | **192.168.50.20/24** | - | Serveur applicatif, Volume monté (/mnt/stockage-lab) |
+
 
 ## 3. Configuration Réseau Netplan (OPS01)
 Le réseau est géré par Netplan via systemd-networkd :
